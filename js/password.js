@@ -129,7 +129,8 @@ function showPasswordModal() {
             const errorMsg = document.getElementById('passwordError');
             if (form) form.style.display = 'none';
             if (errorMsg) {
-                errorMsg.textContent = '为确保安全，必须设置 PASSWORD 环境变量才能使用本服务，请联系管理员进行配置';
+                errorMsg.innerHTML = '本站已更新域名,请使用新域名访问<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">LeLeTV</a>';
+
                 errorMsg.classList.remove('hidden');
                 errorMsg.className = 'text-red-500 mt-2 font-medium'; // 改为更醒目的红色
             }
