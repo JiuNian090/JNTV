@@ -124,7 +124,8 @@ function showPasswordModal() {
         
         // 设置统一的标题和描述
         if (title) title.textContent = '网站维护通知';
-        if (description) description.innerHTML = '本站已停止维护，请转至新域名<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">LeLeTV</a>';
+        if (description) description.innerHTML = '本站已停止维护，请转至乐乐TV的新域名，请点击<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline text-xl font-bold block text-center">LeLeTV</a>';
+
         
         // 隐藏密码表单和错误提示
         if (form) form.style.display = 'none';
