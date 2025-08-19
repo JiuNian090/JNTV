@@ -116,34 +116,19 @@ function showPasswordModal() {
         document.getElementById('doubanArea').classList.add('hidden');
         document.getElementById('passwordCancelBtn').classList.add('hidden');
 
-        // 检查是否需要强制设置密码
-        if (isPasswordRequired()) {
-            // 修改弹窗内容提示用户需要先设置密码
-            const title = passwordModal.querySelector('h2');
-            const description = passwordModal.querySelector('p');
-            if (title) title.textContent = '需要设置密码';
-            if (description) description.textContent = '请先在部署平台设置 PASSWORD 环境变量来保护您的实例';
-            
-            // 隐藏密码输入框和提交按钮，只显示提示信息
-            const form = passwordModal.querySelector('form');
-            const errorMsg = document.getElementById('passwordError');
-            if (form) form.style.display = 'none';
-            if (errorMsg) {
-                errorMsg.innerHTML = '本站已更新域名,请使用新域名访问<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">LeLeTV</a>';
-
-                errorMsg.classList.remove('hidden');
-                errorMsg.className = 'text-red-500 mt-2 font-medium'; // 改为更醒目的红色
-            }
-        } else {
-            // 正常的密码验证模式
-            const title = passwordModal.querySelector('h2');
-            const description = passwordModal.querySelector('p');
-            if (title) title.textContent = '访问验证';
-            if (description) description.innerHTML = '本站已更新域名,请点击<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">新域名</a>访问';
-            
-            const form = passwordModal.querySelector('form');
-            if (form) form.style.display = 'block';
-        }
+        // 统一显示维护通知，不再区分密码模式
+        const title = passwordModal.querySelector('h2');
+        const description = passwordModal.querySelector('p');
+        const form = passwordModal.querySelector('form');
+        const errorMsg = document.getElementById('passwordError');
+        
+        // 设置统一的标题和描述
+        if (title) title.textContent = '网站维护通知';
+        if (description) description.innerHTML = '本站已停止维护，请转至新域名<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">LeLeTV</a>';
+        
+        // 隐藏密码表单和错误提示
+        if (form) form.style.display = 'none';
+        if (errorMsg) errorMsg.classList.add('hidden');
 
         passwordModal.style.display = 'flex';
 
