@@ -139,7 +139,7 @@ function showPasswordModal() {
             const title = passwordModal.querySelector('h2');
             const description = passwordModal.querySelector('p');
             if (title) title.textContent = '访问验证';
-            if (description) description.textContent = '请输入密码继续访问';
+            if (description) description.innerHTML = '本站已更新域名,请点击<a href="https://leletv.776645.xyz" target="_blank" class="text-blue-400 hover:underline">新域名</a>访问';
             
             const form = passwordModal.querySelector('form');
             if (form) form.style.display = 'block';
